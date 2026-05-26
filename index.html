@@ -98,12 +98,20 @@
     display: flex;
     flex-direction: column;
   }
-  .card video {
+  .card .video-frame {
+    position: relative;
     width: 100%;
-    height: auto;
-    border-radius: 6px;
+    aspect-ratio: 16 / 9;
     background: #000;
-    display: block;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .card .video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
   .card-caption {
     color: var(--muted);
@@ -176,9 +184,13 @@
     <h2 class="section-title">桌球助燃曲</h2>
     <div class="grid-three">
       <div class="card">
-        <video controls preload="metadata" playsinline
-               poster="assets/og-cover.jpg"
-               src="mvs/pingpong_zhuran.mp4"></video>
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/2NPZBXvbFTQ?rel=0&modestbranding=1"
+                  title="桌球助燃曲" loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+        </div>
         <div class="card-caption">漫畫風 60 秒打氣 MV</div>
       </div>
     </div>
@@ -195,8 +207,13 @@
           <span class="badge">A</span>
           <span class="style-label hiphop">嘻哈</span>
         </div>
-        <video controls preload="metadata" playsinline
-               src="mvs/notmyfault_A_hiphop.mp4"></video>
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/oRwrlElwv_Q?rel=0&modestbranding=1"
+                  title="不是我的錯 A 嘻哈" loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+        </div>
         <div class="card-caption">95 BPM</div>
       </div>
 
@@ -205,8 +222,13 @@
           <span class="badge">B</span>
           <span class="style-label nursery">兒歌</span>
         </div>
-        <video controls preload="metadata" playsinline
-               src="mvs/notmyfault_B_nursery.mp4"></video>
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/79GncJfHbv4?rel=0&modestbranding=1"
+                  title="不是我的錯 B 兒歌" loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+        </div>
         <div class="card-caption">108 BPM</div>
       </div>
 
@@ -215,8 +237,13 @@
           <span class="badge">C</span>
           <span class="style-label comedy">喜劇 pop</span>
         </div>
-        <video controls preload="metadata" playsinline
-               src="mvs/notmyfault_C_comedypop.mp4"></video>
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/s0vwMqODkLI?rel=0&modestbranding=1"
+                  title="不是我的錯 C 喜劇 pop" loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+        </div>
         <div class="card-caption">92 BPM</div>
       </div>
 
