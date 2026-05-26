@@ -12,3 +12,6 @@ __pycache__/
 *.log
 *.tmp
 *.bak
+
+# 內部設計稿 / spec (不對外公開)
+docs/
