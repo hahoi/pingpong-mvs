@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🏓 桌球 MV 集 — 自製 4 支</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%93%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="🏓 桌球 MV 集 — 自製 4 支">
+<meta property="og:description" content="桌球助燃曲 + 不是我的錯(敗北藉口宇宙辭典)三版,個人練手 AI 作品">
+<meta property="og:image"       content="https://hahoi.github.io/pingpong-mvs/assets/og-cover.jpg">
+<meta property="og:url"         content="https://hahoi.github.io/pingpong-mvs/">
+
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="🏓 桌球 MV 集 — 自製 4 支">
+<meta name="twitter:description" content="桌球助燃曲 + 不是我的錯三版,個人練手 AI 作品">
+<meta name="twitter:image"       content="https://hahoi.github.io/pingpong-mvs/assets/og-cover.jpg">
+
+<style>
+  :root {
+    --bg: #0e1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #7d8590;
+    --accent: #ff6b6b;
+    --accent-soft: #4ecca3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei",
+      "PingFang TC", "Noto Sans CJK TC", sans-serif;
+    line-height: 1.5;
+  }
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  header {
+    margin-bottom: 32px;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 4px;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .sub .signature {
+    height: 22px;
+    width: auto;
+    filter: invert(1);
+    opacity: 0.7;
+  }
+  section {
+    margin-bottom: 40px;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: var(--accent-soft);
+    font-weight: 600;
+  }
+  .section-title::before,
+  .section-title::after {
+    content: "";
+    flex: 0 0 24px;
+    height: 1px;
+    background: var(--accent-soft);
+    opacity: 0.5;
+  }
+  .section-title::after { flex: 1; }
+  .section-sub {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0 0 16px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card video {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    background: #000;
+    display: block;
+  }
+  .card-caption {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .grid-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .grid-three .card-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    background: var(--accent-soft);
+    color: #0e1117;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .style-label {
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .style-label.hiphop  { color: #ff6b6b; }
+  .style-label.nursery { color: #ffd93d; }
+  .style-label.comedy  { color: #4ecca3; }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+
+  @media (max-width: 760px) {
+    body { padding: 16px; }
+    h1 { font-size: 22px; }
+    .grid-three {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <h1>🏓 桌球 MV 集</h1>
+    <div class="sub">
+      <img class="signature" src="assets/signature.png" alt="謝孟良">
+      <span>個人練手作品,自己玩開心的</span>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="section-title">桌球助燃曲</h2>
+    <div class="grid-three">
+      <div class="card">
+        <video controls preload="metadata" playsinline
+               poster="assets/og-cover.jpg"
+               src="mvs/pingpong_zhuran.mp4"></video>
+        <div class="card-caption">漫畫風 60 秒打氣 MV</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">不是我的錯 — 敗北藉口宇宙辭典</h2>
+    <p class="section-sub">三個風格版本,選你愛的那首</p>
+
+    <div class="grid-three">
+
+      <div class="card">
+        <div class="card-head">
+          <span class="badge">A</span>
+          <span class="style-label hiphop">嘻哈</span>
+        </div>
+        <video controls preload="metadata" playsinline
+               src="mvs/notmyfault_A_hiphop.mp4"></video>
+        <div class="card-caption">95 BPM</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="badge">B</span>
+          <span class="style-label nursery">兒歌</span>
+        </div>
+        <video controls preload="metadata" playsinline
+               src="mvs/notmyfault_B_nursery.mp4"></video>
+        <div class="card-caption">108 BPM</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="badge">C</span>
+          <span class="style-label comedy">喜劇 pop</span>
+        </div>
+        <video controls preload="metadata" playsinline
+               src="mvs/notmyfault_C_comedypop.mp4"></video>
+        <div class="card-caption">92 BPM</div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    素材:MiniMax(音樂) / Sora(影片) / GPT Image(分鏡)— 2026 春
+  </footer>
+
+</div>
+
+</body>
+</html>
