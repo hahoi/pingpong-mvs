@@ -186,7 +186,8 @@
     <div class="grid-three">
       <div class="card">
         <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/2NPZBXvbFTQ?rel=0&modestbranding=1"
+          <iframe id="yt-fuel" class="yt-player"
+                  src="https://www.youtube-nocookie.com/embed/2NPZBXvbFTQ?rel=0&modestbranding=1&enablejsapi=1"
                   title="桌球助燃曲" loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
@@ -205,32 +206,18 @@
 
       <div class="card">
         <div class="card-head">
-          <span class="badge">A</span>
-          <span class="style-label hiphop">嘻哈</span>
+          <span class="badge">E</span>
+          <span class="style-label lofi">Lo-Fi</span>
         </div>
         <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/oRwrlElwv_Q?rel=0&modestbranding=1"
-                  title="不是我的錯 A 嘻哈" loading="lazy"
+          <iframe id="yt-e" class="yt-player"
+                  src="https://www.youtube-nocookie.com/embed/N4GnWfg-8Do?rel=0&modestbranding=1&enablejsapi=1"
+                  title="不是我的錯 E Lo-Fi" loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
                   allowfullscreen></iframe>
         </div>
-        <div class="card-caption">95 BPM</div>
-      </div>
-
-      <div class="card">
-        <div class="card-head">
-          <span class="badge">B</span>
-          <span class="style-label nursery">兒歌</span>
-        </div>
-        <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/P2YXK5ZZTYg?rel=0&modestbranding=1"
-                  title="不是我的錯 B 兒歌" loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen></iframe>
-        </div>
-        <div class="card-caption">108 BPM</div>
+        <div class="card-caption">80 BPM</div>
       </div>
 
       <div class="card">
@@ -239,7 +226,8 @@
           <span class="style-label comedy">喜劇 pop</span>
         </div>
         <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/qliu0nFM6Go?rel=0&modestbranding=1"
+          <iframe id="yt-c" class="yt-player"
+                  src="https://www.youtube-nocookie.com/embed/yCjtXzNKN0A?rel=0&modestbranding=1&enablejsapi=1"
                   title="不是我的錯 C 喜劇 pop" loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
@@ -250,17 +238,34 @@
 
       <div class="card">
         <div class="card-head">
-          <span class="badge">D</span>
-          <span class="style-label lofi">Lo-Fi</span>
+          <span class="badge">B</span>
+          <span class="style-label nursery">兒歌</span>
         </div>
         <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/3hU4RCdmmIg?rel=0&modestbranding=1"
-                  title="不是我的錯 D Lo-Fi" loading="lazy"
+          <iframe id="yt-b" class="yt-player"
+                  src="https://www.youtube-nocookie.com/embed/JS2Tb4ycxmQ?rel=0&modestbranding=1&enablejsapi=1"
+                  title="不是我的錯 B 兒歌" loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
                   allowfullscreen></iframe>
         </div>
-        <div class="card-caption">80 BPM</div>
+        <div class="card-caption">108 BPM</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="badge">A</span>
+          <span class="style-label hiphop">嘻哈</span>
+        </div>
+        <div class="video-frame">
+          <iframe id="yt-a" class="yt-player"
+                  src="https://www.youtube-nocookie.com/embed/oRwrlElwv_Q?rel=0&modestbranding=1&enablejsapi=1"
+                  title="不是我的錯 A 嘻哈" loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="card-caption">95 BPM</div>
       </div>
 
     </div>
@@ -271,6 +276,30 @@
   </footer>
 
 </div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  const players = [];
+  function onYouTubeIframeAPIReady() {
+    document.querySelectorAll('iframe.yt-player').forEach(el => {
+      const p = new YT.Player(el.id, {
+        events: {
+          onStateChange: e => {
+            if (e.data !== YT.PlayerState.PLAYING) return;
+            players.forEach(other => {
+              if (other === p) return;
+              const s = other.getPlayerState && other.getPlayerState();
+              if (s === YT.PlayerState.PLAYING || s === YT.PlayerState.BUFFERING) {
+                other.pauseVideo();
+              }
+            });
+          }
+        }
+      });
+      players.push(p);
+    });
+  }
+</script>
 
 </body>
 </html>
