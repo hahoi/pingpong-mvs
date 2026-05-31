@@ -106,6 +106,11 @@
     border-radius: 6px;
     overflow: hidden;
   }
+  .card.card-shorts .video-frame {
+    aspect-ratio: 9 / 16;
+    max-width: 240px;
+    margin: 0 auto;
+  }
   .card .video-frame iframe {
     position: absolute;
     inset: 0;
@@ -151,6 +156,8 @@
   .style-label.nursery { color: #ffd93d; }
   .style-label.comedy  { color: #4ecca3; }
   .style-label.lofi    { color: #9b8cff; }
+  .style-label.shorts  { color: #4dabf7; }
+  .style-label.fuel    { color: #ff9f43; }
   footer {
     margin-top: 48px;
     padding-top: 20px;
@@ -182,27 +189,24 @@
   </header>
 
   <section>
-    <h2 class="section-title">桌球助燃曲</h2>
+    <p class="section-sub">五個風格版本,選你愛的那首</p>
     <div class="grid-three">
-      <div class="card">
+
+      <div class="card card-shorts">
+        <div class="card-head">
+          <span class="badge">G</span>
+          <span class="style-label shorts">Shorts</span>
+        </div>
         <div class="video-frame">
-          <iframe id="yt-fuel" class="yt-player"
-                  src="https://www.youtube-nocookie.com/embed/2NPZBXvbFTQ?rel=0&modestbranding=1&enablejsapi=1"
-                  title="桌球助燃曲" loading="lazy"
+          <iframe id="yt-g" class="yt-player"
+                  src="https://www.youtube-nocookie.com/embed/3gzBv26TTjw?rel=0&modestbranding=1&enablejsapi=1"
+                  title="桌球 G Shorts" loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
                   allowfullscreen></iframe>
         </div>
-        <div class="card-caption">漫畫風 60 秒打氣 MV</div>
+        <div class="card-caption">YouTube Shorts</div>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">不是我的錯 — 桌球敗北藉口宇宙辭典</h2>
-    <p class="section-sub">四個風格版本,選你愛的那首</p>
-
-    <div class="grid-three">
 
       <div class="card">
         <div class="card-head">
@@ -218,22 +222,6 @@
                   allowfullscreen></iframe>
         </div>
         <div class="card-caption">80 BPM</div>
-      </div>
-
-      <div class="card">
-        <div class="card-head">
-          <span class="badge">C</span>
-          <span class="style-label comedy">喜劇 pop</span>
-        </div>
-        <div class="video-frame">
-          <iframe id="yt-c" class="yt-player"
-                  src="https://www.youtube-nocookie.com/embed/yCjtXzNKN0A?rel=0&modestbranding=1&enablejsapi=1"
-                  title="不是我的錯 C 喜劇 pop" loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen></iframe>
-        </div>
-        <div class="card-caption">92 BPM</div>
       </div>
 
       <div class="card">
@@ -254,6 +242,22 @@
 
       <div class="card">
         <div class="card-head">
+          <span class="badge">C</span>
+          <span class="style-label comedy">喜劇 pop</span>
+        </div>
+        <div class="video-frame">
+          <iframe id="yt-c" class="yt-player"
+                  src="https://www.youtube-nocookie.com/embed/yCjtXzNKN0A?rel=0&modestbranding=1&enablejsapi=1"
+                  title="不是我的錯 C 喜劇 pop" loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="card-caption">92 BPM</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
           <span class="badge">A</span>
           <span class="style-label hiphop">嘻哈</span>
         </div>
@@ -266,6 +270,22 @@
                   allowfullscreen></iframe>
         </div>
         <div class="card-caption">95 BPM</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="badge">★</span>
+          <span class="style-label fuel">助燃曲</span>
+        </div>
+        <div class="video-frame">
+          <iframe id="yt-fuel" class="yt-player"
+                  src="https://www.youtube-nocookie.com/embed/2NPZBXvbFTQ?rel=0&modestbranding=1&enablejsapi=1"
+                  title="桌球助燃曲" loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="card-caption">漫畫風 60 秒打氣 MV</div>
       </div>
 
     </div>
